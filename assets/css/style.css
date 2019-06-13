@@ -3,3 +3,7 @@ body {
      /* background-image: url("../images/bg.png"); */
      color: white;
 }
+
+#champ {
+    color: red;
+}
