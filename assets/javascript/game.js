@@ -57,11 +57,13 @@ function test() {
         newGame();
         losses++
         $("#loss").text(losses);
+        $("#champ").text("The USWNT is classless scoring that many goals!")
     }
     else if (gameState.amount === gameState.target) {
         newGame();
         wins++
         $("#wins").text(wins);
+        $("#champ").text("Solid victory!  Just the statement the USWNT needed!")
     }
 }
 
