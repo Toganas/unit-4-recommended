@@ -7,9 +7,13 @@ gameState = {
     target: Math.floor(Math.random() * 102 + 19),
     amount: 0
 }
+    $("#total").text(gameState.amount);
+    $("#randTarget").text(gameState.target);
 }
-
-
+ var wins = 0;
+ var losses = 0;
+$("#wins").text(wins);
+$("#loss").text(losses);
     
     newGame();
 
@@ -26,27 +30,34 @@ gameState = {
     }
     function addgem2() {
         gameState.amount = gameState.amount + gameState.gem2;
+        test();
     }
     function addgem3() {
         gameState.amount = gameState.amount + gameState.gem3;
+        test();
     }
     function addgem4() {
         gameState.amount = gameState.amount + gameState.gem4;
+        test();
     }
     $("#gem1").click(function () {
         addgem1();
+        $("#total").text(gameState.amount);
         console.log(gameState.amount)
     });
     $("#gem2").click(function () {
         addgem2();
+        $("#total").text(gameState.amount);
         console.log(gameState.amount)
     });
     $("#gem3").click(function () {
         addgem3();
+        $("#total").text(gameState.amount);
         console.log(gameState.amount)
     });
     $("#gem4").click(function () {
         addgem4();
+        $("#total").text(gameState.amount);
         console.log(gameState.amount)
     });
 
@@ -60,9 +71,19 @@ gameState = {
 function test() {
     if (gameState.amount > gameState.target) {
         newGame();
+        losses++
+        $("#loss").text(losses);
+        console.log(losses)
+    }
+    else if (gameState.amount === gameState.target) {
+        newGame();
+        wins++
+        $("#wins").text(wins);
+        console.log(wins)
+        
     }
 }
 
 
- $("#total").innerHTML = (gameState.amount);
+ 
 
